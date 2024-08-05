@@ -15,17 +15,21 @@ const Search = ({ CartItem }) => {
       <section className='search'>
         <div className='container c_flex'>
           <div className='logo width '>
-            <img src={logo} alt='' />
+          <Link to='/'><img src={logo} alt='' /></Link>
           </div>
 
           <div className='search-box f_flex'>
             <i className='fa fa-search'></i>
-            <input type='text' placeholder='Search and hit enter...' />
-            <span>All Category</span>
+            <input type='text' placeholder='Pesquise e aperte Enter...' />
+             <span>Categorias</span>
           </div>
 
           <div className='icon f_flex width'>
+          <div className='perfil'>
+          <Link to='/perfil'>
             <i className='fa fa-user icon-circle'></i>
+            </Link>
+            </div>
             <div className='cart'>
               <Link to='/cart'>
                 <i className='fa fa-shopping-bag icon-circle'></i>

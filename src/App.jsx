@@ -5,6 +5,7 @@ import Header from "./common/header/Header"
 import Pages from "./pages/Pages"
 import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
+import Perfil from "./common/Perfil/Perfil"
 import Footer from "./common/footer/Footer"
 import Sdata from "./components/shops/Sdata"
 
@@ -78,6 +79,12 @@ function App() {
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />
           </Route>
+          <Route path='/perfil' exact>
+          <Perfil productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
+       
+
+         </Route>
+          
         </Switch>
         <Footer />
       </Router>
