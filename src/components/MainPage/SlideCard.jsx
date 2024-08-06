@@ -12,7 +12,7 @@ const SlideCard = () => {
     slidesToScroll: 1,
     autoplay: true,
     appendDots: (dots) => {
-      return <ul style={{ margin: "0px" }}>{dots}</ul>
+      return <ul style={{ margin: "1px" }}>{dots}</ul>
     },
   }
   return (
@@ -25,7 +25,7 @@ const SlideCard = () => {
                 <div className='left'>
                   <h1>{value.title}</h1>
                   <p>{value.desc}</p>
-                  <button className='btn-primary'>Visit Collections</button>
+                  <button className='btn-primary'>Confira!</button>
                 </div>
                 <div className='right'>
                   <img src={value.cover} alt='' />

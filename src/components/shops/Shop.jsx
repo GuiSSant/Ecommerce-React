@@ -8,9 +8,7 @@ const Shop = ({ addToCart, shopItems }) => {
     <>
       <section className='shop background'>
         <div className='container d_flex'>
-          <Catg />
-
-          <div className='contentWidth'>
+          <div /*className='contentWidth'*/>
             <div className='heading d_flex'>
               <div className='heading-left row  f_flex'>
                 <h2>Mobile Phones</h2>
@@ -20,8 +18,10 @@ const Shop = ({ addToCart, shopItems }) => {
                 <i className='fa-solid fa-caret-right'></i>
               </div>
             </div>
+            <div className='c_flex'>
             <div className='product-content  grid1'>
               <ShopCart addToCart={addToCart} shopItems={shopItems} />
+            </div>
             </div>
           </div>
         </div>

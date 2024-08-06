@@ -1,9 +1,9 @@
 import React from "react"
 import "./style.css"
 
-const Cart = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart }) => {
   // Stpe: 7   calucate total of items
-  const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0)
+  const totalPrice = CartItem.reduce((price, item, discount) => price + item.qty * (item.price-(item.price*(item.discount/100))), 0)
 
   // prodcut qty total
   return (
@@ -17,7 +17,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
 
             {/* yasma hami le cart item lai display garaaxa */}
             {CartItem.map((item) => {
-              const productQty = item.price * item.qty
+              const productQty = (item.price-(item.price*(item.discount/100))) * item.qty
 
               return (
                 <div className='cart-list product d_flex' key={item.id}>
@@ -27,13 +27,13 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                   <div className='cart-details'>
                     <h3>{item.name}</h3>
                     <h4>
-                      ${item.price}.00 * {item.qty}
-                      <span>${productQty}.00</span>
+                      R${(item.price-(item.price*(item.discount/100))).toFixed(2)} * {item.qty}
+                      <span>R${productQty.toFixed(2)}</span>
                     </h4>
                   </div>
                   <div className='cart-items-function'>
                     <div className='removeCart'>
-                      <button className='removeCart'>
+                      <button className='removeCart' onClick={() => removeFromCart(item)}>
                         <i className='fa-solid fa-xmark'></i>
                       </button>
                     </div>
@@ -60,7 +60,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             <h2>Cart Summary</h2>
             <div className=' d_flex'>
               <h4>Total Price :</h4>
-              <h3>${totalPrice}.00</h3>
+              <h3>R${totalPrice.toFixed(2)}</h3>
             </div>
           </div>
         </div>
