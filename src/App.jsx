@@ -79,19 +79,15 @@ function App() {
 
   return (
     <>
-      <Router>
+     <Router>
         <Header CartItem={CartItem} />
         <Routes>
-          <Route path='/' exact>
-            <Pages productItems={productItems} addToCart={addToCart} shopItems={productItems} />
-          </Route>
-          <Route path='/cart' exact>
-            <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} removeFromCart={removeFromCart} />
-          </Route>
-        
-          <Route path="/cat/:cat" >
-          <CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>
-          </Route>
+          <Route path='/' element={<Pages productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
+           
+         <Route path='/cart' element={<Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} removeFromCart={removeFromCart} />}/>
+            
+      
+          <Route path="/cat/:cat" element={<CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
        
 
 
