@@ -46,7 +46,7 @@
 
 import React, { useState } from "react"
 
-const ShopCart = ({ shopItems, addToCart }) => {
+const ShopCart = ({ shopItems, addToCart, Cat }) => {
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)
@@ -54,13 +54,14 @@ const ShopCart = ({ shopItems, addToCart }) => {
 
   return (
     <>
+  
       {shopItems.map((shopItems, index) => {
-        return (
+      {if (shopItems.cat == Cat)  return (
           <div className='box'>
-            <div className='product mtop'>
+            <div className='product mtop compra'>
               <div className='img'>
-                <span className='discount'>{shopItems.discount}% Off</span>
-                <img src={shopItems.cover} alt='' />
+              {(shopItems.discount > 0)  && <span className='discount'>-{shopItems.discount}%</span>}
+                <img src={'.'+shopItems.cover} alt='' />
                 <div className='product-like'>
                   <label>{count}</label> <br />
                   <i className='fa-regular fa-heart' onClick={increment}></i>
@@ -75,19 +76,22 @@ const ShopCart = ({ shopItems, addToCart }) => {
                   <i className='fa fa-star'></i>
                   <i className='fa fa-star'></i>
                 </div>
-                <div className='price'>
-                  <h4>${shopItems.price}.00 </h4>
-                  {/* step : 3  
+
+                {(shopItems.discount > 0)  &&<s><h5 className='old'>R${shopItems.price.toFixed(2)} </h5></s>}
+                  <div className='price'>
+                   
+                    <h4>R${(shopItems.price-(shopItems.price*(shopItems.discount/100))).toFixed(2)}</h4>
+                    {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
-                  <button onClick={() => addToCart(shopItems)}>
-                    <i className='fa fa-plus'></i>
-                  </button>
-                </div>
+                    <button onClick={() => addToCart(shopItems)}>
+                      <i className='fa fa-plus'></i>
+                    </button>
+                  </div>
               </div>
             </div>
           </div>
-        )
+        )}
       })}
     </>
   )

@@ -1,10 +1,12 @@
 import React from "react"
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const data = [
     {
       cateImg: "./images/category/cat1.png",
-      cateName: "Fashion",
+      cateName: "equipamento",
     },
     {
       cateImg: "./images/category/cat2.png",
@@ -51,12 +53,20 @@ const Categories = () => {
   return (
     <>
       <div className='category'>
+        
         {data.map((value, index) => {
           return (
+            <Link
+            key={value.cateName}
+           // Moving to the product page
+           to={`/cat/${value.cateName}`}
+            className=""
+          >
             <div className='box f_flex' key={index}>
               <img src={value.cateImg} alt='' />
               <span>{value.cateName}</span>
             </div>
+            </Link>
           )
         })}
       </div>

@@ -1,13 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
+import { useState } from "react"
 import "./App.css"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+
 import Header from "./common/header/Header"
 import Pages from "./pages/Pages"
 import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
-import Perfil from "./common/Perfil/Perfil"
 import Footer from "./common/footer/Footer"
-import Sdata from "./components/shops/Sdata"
+import Sdata from "./components/Sdata"
+import Login from './auth/Login'
+import Registrar from './auth/Registrar'
+import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
 
 function App() {
   /*
@@ -24,7 +28,6 @@ function App() {
 
   //Step 1 :
   const { productItems } = Data
-  const { shopItems } = Sdata
 
   //Step 2 :
   const [CartItem, setCartItem] = useState([])
@@ -81,16 +84,19 @@ function App() {
         <Header CartItem={CartItem} />
         <Switch>
           <Route path='/' exact>
-            <Pages productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
+            <Pages productItems={productItems} addToCart={addToCart} shopItems={productItems} />
           </Route>
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} removeFromCart={removeFromCart} />
           </Route>
-          <Route path='/perfil' exact>
-          <Perfil productItems={productItems} addToCart={addToCart} shopItems={shopItems} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/registro" exact component={Registrar} />
+          <Route path="/cat/:cat" >
+          <CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>
+          </Route>
        
 
-         </Route>
+
           
         </Switch>
         <Footer />

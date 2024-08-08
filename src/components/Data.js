@@ -63,7 +63,7 @@ const Data = {
       cover: "./images/agricultura/soprovarredor.png",
       name: "Soprovarredor Costal Motorizado - G59 - 59,2 cc",
       price: 2100,
-      cat: "quipamento",
+      cat: "equipamento",
       desc: "Complementando a linha de motorizados, o equipamento possui em seu DNA a tradicional qualidade da marca Guarany aliada a ergonomia, facilidade no uso e alta capacidade de sopro, representando o melhor custo-benefício para sua necessidade.",
     },
 

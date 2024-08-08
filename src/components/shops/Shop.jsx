@@ -2,32 +2,32 @@ import React from "react"
 import Catg from "./Catg"
 import ShopCart from "./ShopCart"
 import "./style.css"
+import Categories from "../MainPage/Categories"
 
-const Shop = ({ addToCart, shopItems }) => {
-  return (
-    <>
-      <section className='shop background'>
-        <div className='container d_flex'>
-          <div /*className='contentWidth'*/>
-            <div className='heading d_flex'>
-              <div className='heading-left row  f_flex'>
-                <h2>Mobile Phones</h2>
+const Shop = ({ addToCart, shopItems, Cat }) => {
+ 
+    return (
+      <>
+        <section className='shop background'>
+          <div className='container d_flex'>
+            <Categories />
+  
+            <div className='contentWidth'>
+              <div className='heading d_flex'>
+                <div className='heading-left row  f_flex'>
+                <h2>{Cat}</h2>
+                </div>
+              
               </div>
-              <div className='heading-right row '>
-                <span>View all</span>
-                <i className='fa-solid fa-caret-right'></i>
+              <div className='product-content  grid1'>
+                <ShopCart addToCart={addToCart} shopItems={shopItems} Cat={Cat}/>
               </div>
-            </div>
-            <div className='c_flex'>
-            <div className='product-content  grid1'>
-              <ShopCart addToCart={addToCart} shopItems={shopItems} />
-            </div>
             </div>
           </div>
-        </div>
-      </section>
-    </>
-  )
+        </section>
+      </>
+    )
+  
 }
 
 export default Shop
