@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import "./App.css"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 import Header from "./common/header/Header"
 import Pages from "./pages/Pages"
@@ -82,7 +82,7 @@ function App() {
     <>
       <Router>
         <Header CartItem={CartItem} />
-        <Switch>
+        <Routes>
           <Route path='/' exact>
             <Pages productItems={productItems} addToCart={addToCart} shopItems={productItems} />
           </Route>
@@ -98,7 +98,7 @@ function App() {
 
 
           
-        </Switch>
+        </Routes>
         <Footer />
       </Router>
     </>
