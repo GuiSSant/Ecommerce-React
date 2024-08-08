@@ -9,8 +9,7 @@ import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
 import Sdata from "./components/Sdata"
-import Login from './auth/Login'
-import Registrar from './auth/Registrar'
+
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
 
 function App() {
@@ -89,8 +88,7 @@ function App() {
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} removeFromCart={removeFromCart} />
           </Route>
-          <Route path="/login" exact component={Login} />
-          <Route path="/registro" exact component={Registrar} />
+        
           <Route path="/cat/:cat" >
           <CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>
           </Route>
