@@ -1,8 +1,10 @@
 import React from 'react';
-import { Container, Paper, Typography, TextField, Button } from '@mui/material';
-import './App.css';
+import * as Engine from "@mui/styled-engine"
 
-const Profile = () => {
+import { Container, Paper, Typography, TextField, Button } from '@mui/material';
+import '../App.css';
+
+const Register = () => {
   return (
     <Container className="register-container">
       <Paper className="register-paper">
@@ -42,4 +44,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Register;

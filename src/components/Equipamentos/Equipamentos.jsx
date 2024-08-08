@@ -1,5 +1,7 @@
 import React from "react"
 import FlashCard from "./FlashCard"
+import { Link } from "react-router-dom";
+
 import "./style.css"
 
 const Equipamentos = ({ productItems, addToCart }) => {
@@ -12,10 +14,11 @@ const Equipamentos = ({ productItems, addToCart }) => {
               <i className='fa-solid fa-border-all'></i>
               <h2>Equipamentos</h2>
             </div>
-            <div className='heading-right row '>
+           <div className='heading-right row '>
+           <Link to={`/cat/equipamento`}>
               <span>Ver Tudo</span>
               <i className='fa-solid fa-caret-right'></i>
-            </div>
+              </Link> </div>
           </div>
           
           <FlashCard productItems={productItems} addToCart={addToCart}/>

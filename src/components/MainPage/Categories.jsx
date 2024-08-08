@@ -63,7 +63,7 @@ const Categories = () => {
             className=""
           >
             <div className='box f_flex' key={index}>
-              <img src={value.cateImg} alt='' />
+              {/*<img src={/*value.cateImg} alt='' />*/}
               <span>{value.cateName}</span>
             </div>
             </Link>

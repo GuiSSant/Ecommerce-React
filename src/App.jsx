@@ -8,9 +8,10 @@ import Pages from "./pages/Pages"
 import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
-import Sdata from "./components/Sdata"
+import Login from "./auth/Login"
 
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
+import Register from "./auth/Register"
 
 function App() {
   /*
@@ -79,7 +80,7 @@ function App() {
 
   return (
     <>
-     <Router>
+      <Router>
         <Header CartItem={CartItem} />
         <Routes>
           <Route path='/' element={<Pages productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
@@ -88,6 +89,10 @@ function App() {
             
       
           <Route path="/cat/:cat" element={<CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
+
+          <Route path="/login" element={<Login/>}/>
+
+          <Route path="/registro" element={<Register/>}/>
        
 
 
