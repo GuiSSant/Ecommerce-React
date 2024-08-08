@@ -17,14 +17,14 @@
   padding: 20px 0;
 }
 .search .logo img {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 .search .width {
-  width: 20%;
+  width: 6%;
 }
 .search-box {
-  width: 80%;
+  width: 65%;
   border: 2px solid rgba(0, 0, 0, 0.1);
   /*padding: 10px;*/
   border-radius: 50px;
@@ -111,7 +111,7 @@ header ul li a:hover {
   display: none;
 }
 .search.active {
-  height: 12vh;
+  height: 13vh;
   position: fixed;
   top: 0;
   z-index: 1000;

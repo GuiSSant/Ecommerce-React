@@ -44,7 +44,7 @@ const FlashCard = ({ productItems, addToCart }) => {
     <>
       <Slider {...settings}>
         {productItems.map((productItems) => {
-         if(productItems.cat == 'equipamentos') return  (
+         if(productItems.cat == 'sementes') return  (
             <div className='box'>
               <div className='product mtop compra'>
                 <div className='img'>
