@@ -1,9 +1,16 @@
 import React from "react"
 import "./style.css"
+import { Link } from "react-router-dom";
 
-const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart }) => {
+
+const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart, removeAll }) => {
   // Stpe: 7   calucate total of items
   const totalPrice = CartItem.reduce((price, item, discount) => price + item.qty * (item.price-(item.price*(item.discount/100))), 0)
+
+  const tirartudo =() =>
+  {
+    CartItem.map( (todosItens) => removeFromCart(todosItens))
+  }
 
   // prodcut qty total
   return (
@@ -13,7 +20,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart }) => {
           {/* if hamro cart ma kunai pani item xaina bhane no diplay */}
 
           <div className='cart-details'>
-            {CartItem.length === 0 && <h1 className='no-items product'>No Items are add in Cart</h1>}
+            {CartItem.length === 0 && <h1 className='no-items product'>Sem itens no carrinho</h1>}
 
             {/* yasma hami le cart item lai display garaaxa */}
             {CartItem.map((item) => {
@@ -57,11 +64,14 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart }) => {
           </div>
 
           <div className='cart-total product'>
-            <h2>Cart Summary</h2>
+            {//<h2>Cart Summary</h2>^
+            }
             <div className=' d_flex'>
-              <h4>Total Price :</h4>
+              <h4>Preço Total:</h4>
               <h3>R${totalPrice.toFixed(2)}</h3>
+              
             </div>
+            <Link to={`/pedido`}><button className='btn-primary' onClick={() => removeAll(CartItem)}>Fechar Pedido</button></Link>
           </div>
         </div>
       </section>
