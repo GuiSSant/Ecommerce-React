@@ -1,51 +1,53 @@
-import React,{ useState } from "react";
+import React, {useState } from "react";
 import logo from "../../components/assets/images/logo.png"
 import { Link } from "react-router-dom"
 import List from "./List";
 
 const Search = ({ CartItem }) => {
   // fixed Header
-  window.addEventListener("scroll", function () {
+  {/*window.addEventListener("scroll", function () {
     const search = document.querySelector(".search")
     search.classList.toggle("active", window.scrollY > 100)
-  })
+  })*/}
 
   const [inputText, setInputText] = useState("");
-  let inputHandler = (e) => {
+  {/*let inputHandler = (e) => {
     //convert input text to lower case
  
     var lowerCase =e.target.value.toLowerCase();
     setInputText(lowerCase);
-  };
+  };*/}
 
   const Esconder = () => {
   
 
     // Use setTimeout to simulate a delayed action
-    {/*setTimeout(() => {
+    setTimeout(() => {
       const searchResult = document.querySelector('.result-Search')
       if(searchResult != null)searchResult.classList.add("hidden")
-    }, 200);*/}
+    }, 200);
   };
 
 
 
   const Show =()=>{
-    {/*const searchResult = document.querySelector('.result-Search')
-    if(searchResult != null)searchResult.classList.remove("hidden")*/}
+    const searchResult = document.querySelector('.result-Search')
+    if(searchResult != null)searchResult.classList.remove("hidden")
   }
 
   return (
     <>
       <section className='search'  onBlur={Esconder}>
-        <div className='container c_flex' >
+       {/*} <div className='container c_flex' >
           <div className='logo width '>
           <Link to='/'><img src={logo} alt='' /></Link>
           </div>
 
           <div className='search-box f_flex'>
 
-          {/*<span>Categorias</span>*/}
+          {//<span>Categorias</span>*/
+          }
+          {/*}
 
             <input type='text' placeholder='Pesquise e aperte Enter...' onChange={inputHandler} onClick={Show} />
             <i className='fa fa-search'></i>
@@ -70,7 +72,7 @@ const Search = ({ CartItem }) => {
             </div>
           </div>
 
-        </div>
+        </div>*/}
        <List input={inputText}/>
 
       </section>
