@@ -22,17 +22,17 @@ const Search = ({ CartItem }) => {
   
 
     // Use setTimeout to simulate a delayed action
-    setTimeout(() => {
+   {/*} setTimeout(() => {
       const searchResult = document.querySelector('.result-Search')
       if(searchResult != null)searchResult.classList.add("hidden")
-    }, 200);
+    }, 200);*/}
   };
 
 
 
   const Show =()=>{
-    const searchResult = document.querySelector('.result-Search')
-    if(searchResult != null)searchResult.classList.remove("hidden")
+    {/*const searchResult = document.querySelector('.result-Search')
+    if(searchResult != null)searchResult.classList.remove("hidden")*/}
   }
 
   return (
