@@ -45,6 +45,8 @@
 //export default ShopCart
 
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+
 
 const ShopCart = ({ shopItems, addToCart, Cat }) => {
   const [count, setCount] = useState(0)
@@ -59,16 +61,16 @@ const ShopCart = ({ shopItems, addToCart, Cat }) => {
       {if (shopItems.cat == Cat)  return (
           <div className='box'>
             <div className='product mtop compra'>
-              <div className='img'>
+            <Link to={'/prod/'+shopItems.id} ><div className='img'>
               {(shopItems.discount > 0)  && <span className='discount'>-{shopItems.discount}%</span>}
                 <img src={'.'+shopItems.cover} alt='' />
-                <div className='product-like'>
+                {/*<div className='product-like'>
                   <label>{count}</label> <br />
                   <i className='fa-regular fa-heart' onClick={increment}></i>
-                </div>
-              </div>
+                </div>*/}
+              </div></Link>
               <div className='product-details'>
-                <h3>{shopItems.name}</h3>
+              <Link to={'/prod/'+shopItems.id} ><h3>{shopItems.name}</h3></Link>
                 <div className='rate'>
                   <i className='fa fa-star'></i>
                   <i className='fa fa-star'></i>

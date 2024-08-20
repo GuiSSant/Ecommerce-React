@@ -12,6 +12,8 @@ import Login from "./auth/Login"
 
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
 import Register from "./auth/Register"
+import Produto from "./components/Produto/Produto"
+import Pedido from "./components/Pedido/Pedido"
 
 function App() {
   /*
@@ -73,11 +75,20 @@ function App() {
 
 
   const removeFromCart = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id)
     setCartItem(CartItem.filter((item) => item.id !== product.id))
 
   }
 
+  const removeAll = (CartItem) => {
+    
+    let remover = CartItem;
+
+    { remover.map( (item) => setCartItem(CartItem.filter((item) => item.id !== item.id))) }
+
+
+    }
+
+  
   return (
     <>
       <Router>
@@ -85,14 +96,18 @@ function App() {
         <Routes>
           <Route path='/' element={<Pages productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
            
-         <Route path='/cart' element={<Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} removeFromCart={removeFromCart} />}/>
+         <Route path='/cart' element={<Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} removeFromCart={removeFromCart} removeAll={removeAll}/>}/>
             
       
           <Route path="/cat/:cat" element={<CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
 
+          <Route path="/prod/:prod" element={<Produto productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
+
+
           <Route path="/login" element={<Login/>}/>
 
           <Route path="/registro" element={<Register/>}/>
+          <Route path="/pedido" element={<Pedido/>}/>
        
 
 

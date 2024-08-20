@@ -1,5 +1,5 @@
 {
-  "name": "FazVendas",
+  "name": "socorro",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -15,11 +15,13 @@
     "@mui/icons-material": "^5.16.6",
     "@mui/material": "^5.16.6",
     "@mui/styled-engine": "^5.16.6",
+    "@mui/system": "^5.16.7",
     "@types/react-router-dom": "^5.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.0",
     "react-slick": "^0.30.2",
+    "react-toastify": "^10.0.5",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.12"
   },
