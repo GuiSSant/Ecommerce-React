@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import  React, {useState } from 'react'
 import Data from "../../components/Data"
 import { Link } from "react-router-dom"
 
