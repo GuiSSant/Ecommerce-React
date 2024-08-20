@@ -15,7 +15,7 @@ const Irrigação = ({ productItems, addToCart }) => {
               <h2>Irrigação</h2>
             </div>
            <div className='heading-right row '>
-           <Link to={`/cat/equipamento`}>
+           <Link to={`/cat/irrigação`}>
               <span>Ver Tudo</span>
               <i className='fa-solid fa-caret-right'></i>
               </Link> </div>

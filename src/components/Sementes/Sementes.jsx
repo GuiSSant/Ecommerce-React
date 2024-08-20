@@ -15,7 +15,7 @@ const Sementes = ({ productItems, addToCart }) => {
               <h2>Sementes</h2>
             </div>
            <div className='heading-right row '>
-           <Link to={`/cat/equipamento`}>
+           <Link to={`/cat/sementes`}>
               <span>Ver Tudo</span>
               <i className='fa-solid fa-caret-right'></i>
               </Link> </div>
