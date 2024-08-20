@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -46,20 +47,20 @@ const FlashCard = ({ productItems, addToCart }) => {
       <Slider {...settings}>
         {productItems.map((productItems) => {
          if(productItems.discount > 0) return  (
-            <div className='box'>
+       <div className='box'>
               <div className='product mtop compra'>
-                <div className='img'>
+              <Link to={'/prod/'+productItems.id} ><div className='img'>
                   
-                    <span className='discount'>-{productItems.discount}%</span>
-                  
-                  <div><img src={productItems.cover} alt='' height='270px' width='270px'/></div>
-                  <div className='product-like'>
-                    <label>{count}</label> <br />
-                    <i className='fa-regular fa-heart' onClick={increment}></i>
-                  </div>
-                </div>
-                <div className='product-details'>
-                  <h3>{productItems.name}</h3>
+                  {(productItems.discount > 0)  && <span className='discount'>-{productItems.discount}%</span>}
+                    
+                    <div><img src={productItems.cover} alt='' height='270px' width='270px'/></div>
+                  {/*}  <div className='product-like'>
+                      <label>{count}</label> <br />
+                      <i className='fa-regular fa-heart' onClick={increment}></i>
+                    </div>*/}
+                  </div></Link>
+                  <div className='product-details'>
+                  <Link to={'/prod/'+productItems.id} ><h3>{productItems.name}</h3></Link>
                   
                   <div className='rate'>
                     <i className='fa fa-star'></i>
