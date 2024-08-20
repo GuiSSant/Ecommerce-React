@@ -11,7 +11,7 @@ return(
 
     <div className='container'>
           <div className='container'>
-              <h1>PEDIDO CONCLUIDO</h1>
+              <h1>PEDIDO CONCLUÍDO</h1>
 
           </div>
         <Link to={`/`} className="botao"><button className='btn-primary botao'>Voltar para a Página Inicial</button></Link>
