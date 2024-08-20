@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 import logo from "../../components/assets/images/logo.png"
 import { Link } from "react-router-dom"
-import List from "./List";
+//import List from "./List";
 
 const Search = ({ CartItem }) => {
   // fixed Header
@@ -73,7 +73,7 @@ const Search = ({ CartItem }) => {
           </div>
 
         </div>*/}
-       <List input={inputText}/>
+{/*<List input={inputText}/>*/}
 
       </section>
 
