@@ -1,5 +1,5 @@
 import React from "react"
-import FlashCard from "./FlashCard"
+import FlashCard from "../../common/FlashCards/FlashCard"
 import { Link } from "react-router-dom";
 
 import "./style.css"
@@ -21,7 +21,7 @@ const Sementes = ({ productItems, addToCart }) => {
               </Link> </div>
           </div>
           
-          <FlashCard productItems={productItems} addToCart={addToCart}/>
+          <FlashCard productItems={productItems} addToCart={addToCart} categ={'sementes'}/>
         </div>
       </section>
     </>

@@ -24,6 +24,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart, removeAll }) =
 
             {/* yasma hami le cart item lai display garaaxa */}
             {CartItem.map((item) => {
+              if(item.qty > 25) item.qty = 25
               const productQty = (item.price-(item.price*(item.discount/100))) * item.qty
 
               return (
@@ -71,7 +72,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty, removeFromCart, removeAll }) =
               <h3>R${totalPrice.toFixed(2)}</h3>
               
             </div>
-            <Link to={`/pedido`}><button className='btn-primary' onClick={() => removeAll(CartItem)}>Fechar Pedido</button></Link>
+            {totalPrice > 0 ? (<Link to={`/pedido`}><button className= 'btn-primary active' onClick={() => removeAll(CartItem)}>Fechar Pedido</button></Link> ):
+            <button className= 'btn-primary'>Fechar Pedido</button>}
           </div>
         </div>
       </section>

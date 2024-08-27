@@ -10,6 +10,7 @@ const CategoriaCarregada = ({ productItems, addToCart, CartItem, shopItems }) =>
 
 
   return (<>
+  
        <Shop shopItems={shopItems} addToCart={addToCart} Cat={cat} />
 
  

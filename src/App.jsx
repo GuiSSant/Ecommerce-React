@@ -35,7 +35,7 @@ function App() {
   const [CartItem, setCartItem] = useState([])
 
   //Step 4 :
-  const addToCart = (product) => {
+  const addToCart = (product, qtd) => {
     // if hamro product alredy cart xa bhane  find garna help garxa
     const productExit = CartItem.find((item) => item.id === product.id)
     // if productExit chai alredy exit in cart then will run fun() => setCartItem
@@ -44,12 +44,15 @@ function App() {
     // productExit product chai display garxa
     // ani increase  exits product QTY by 1
     // if item and product doesnt match then will add new items
+    if(qtd == null) qtd = 1
+    else qtd = qtd - 0
+
     if (productExit) {
-      setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty + 1 } : item)))
+      setCartItem(CartItem.map((item) => (item.id === product.id ? { ...productExit, qty: productExit.qty - 0 + qtd } : item)))
     } else {
       // but if the product doesnt exit in the cart that mean if card is empty
       // then new product is added in cart  and its qty is initalize to 1
-      setCartItem([...CartItem, { ...product, qty: 1 }])
+      setCartItem([...CartItem, { ...product, qty: qtd }])
     }
   }
 
@@ -63,7 +66,7 @@ function App() {
     // if the item.id is doesnt match to product.id then that items are display in cart
     // else
     if (productExit.qty === 1) {
-      setCartItem(CartItem.filter((item) => item.id !== product.id))
+      removeFromCart(product)
     } else {
       // if product is exit and qty  of that produt is not equal to 1
       // then will run function call setCartItem

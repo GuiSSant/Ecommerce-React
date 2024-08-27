@@ -1,26 +1,27 @@
 import React from "react"
-import FlashCard from "./FlashCard"
 import "./style.css"
+import TopCart from "./TopCart"
 
-const Descontos = ({ productItems, addToCart }) => {
+const TopCate = () => {
   return (
     <>
-      <section className='flash'>
+      <section className='TopCate background'>
         <div className='container'>
           <div className='heading d_flex'>
             <div className='heading-left row  f_flex'>
-              <i className='fa fa-bolt'></i>
-              <h2>Descontos</h2>
+              <i className='fa-solid fa-border-all'></i>
+              <h2>Top Categories</h2>
             </div>
             <div className='heading-right row '>
-             
+              <span>View all</span>
+              <i className='fa-solid fa-caret-right'></i>
             </div>
           </div>
-          <FlashCard productItems={productItems} addToCart={addToCart}/>
+          <TopCart />
         </div>
       </section>
     </>
   )
 }
 
-export default Descontos
+export default TopCate

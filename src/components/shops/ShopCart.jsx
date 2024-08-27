@@ -45,6 +45,8 @@
 //export default ShopCart
 
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+
 
 const ShopCart = ({ shopItems, addToCart, Cat }) => {
   const [count, setCount] = useState(0)
@@ -55,20 +57,21 @@ const ShopCart = ({ shopItems, addToCart, Cat }) => {
   return (
     <>
   
-      {shopItems.map((shopItems, index) => {
+       {shopItems.map((shopItems, index) => {
       {if (shopItems.cat == Cat)  return (
+        
           <div className='box'>
             <div className='product mtop compra'>
-              <div className='img'>
+            <Link to={'/prod/'+shopItems.id} ><div className='img'>
               {(shopItems.discount > 0)  && <span className='discount'>-{shopItems.discount}%</span>}
                 <img src={'.'+shopItems.cover} alt='' />
-                <div className='product-like'>
+                {/*<div className='product-like'>
                   <label>{count}</label> <br />
                   <i className='fa-regular fa-heart' onClick={increment}></i>
-                </div>
-              </div>
+                </div>*/}
+              </div></Link>
               <div className='product-details'>
-                <h3>{shopItems.name}</h3>
+              <Link to={'/prod/'+shopItems.id} ><h3>{shopItems.name}</h3></Link>
                 <div className='rate'>
                   <i className='fa fa-star'></i>
                   <i className='fa fa-star'></i>
@@ -80,7 +83,7 @@ const ShopCart = ({ shopItems, addToCart, Cat }) => {
                 {(shopItems.discount > 0)  &&<s><h5 className='old'>R${shopItems.price.toFixed(2)} </h5></s>}
                   <div className='price'>
                    
-                    <h4>R${(shopItems.price-(shopItems.price*(shopItems.discount/100))).toFixed(2)}</h4>
+                    <h4>R${(shopItems.price-(shopItems.price*(shopItems.discount/100))).toFixed(2)} </h4>
                     {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
