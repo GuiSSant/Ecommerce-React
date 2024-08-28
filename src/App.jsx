@@ -9,7 +9,7 @@ import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
 import Login from "./auth/Login"
-
+import Profile from "./auth/Profile"
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
 import Register from "./auth/Register"
 import Produto from "./components/Produto/Produto"
