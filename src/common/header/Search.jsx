@@ -58,7 +58,7 @@ const Search = ({ CartItem }) => {
 
           <div className='icon f_flex width'>
           <div className='perfil'>
-          <Link to='/login'>
+          <Link to='/profile'>
             <i className='fa fa-user icon-circle'></i>
             </Link>
             </div>
