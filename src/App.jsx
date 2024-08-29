@@ -9,9 +9,9 @@ import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
 import Login from "./auth/Login"
-
+import Profile from "./auth/Profile"
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
-import Register from "./auth/Register"
+import Register from "./auth/Registro"
 import Produto from "./components/Produto/Produto"
 import Pedido from "./components/Pedido/Pedido"
 
@@ -108,8 +108,8 @@ function App() {
 
 
           <Route path="/login" element={<Login/>}/>
-
-          <Route path="/registro" element={<Register/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="/pedido" element={<Pedido/>}/>
        
 

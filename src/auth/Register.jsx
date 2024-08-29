@@ -1,47 +1,53 @@
-import React from 'react';
-import * as Engine from "@mui/styled-engine"
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './style.css';
 
-import { Container, Paper, Typography, TextField, Button } from '@mui/material';
-import '../App.css';
+const Login = () => {
+  const [data, setData] = useState({ email: '', password: '' });
 
-const Register = () => {
+  const changeHandler = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <Container className="register-container">
-      <Paper className="register-paper">
-        <Typography variant="h4" className="register-title">
-          Registro
-        </Typography>
-        <form className="register-form">
-          <TextField
-            label="Nome"
-            name="name"
-            fullWidth
-            required
-            className="register-input"
-          />
-          <TextField
-            label="Email"
-            type="email"
-            name="email"
-            fullWidth
-            required
-            className="register-input"
-          />
-          <TextField
-            label="Senha"
-            type="password"
-            name="password"
-            fullWidth
-            required
-            className="register-input"
-          />
-          <Button type="submit" className="btn-primary">
-            Registrar
-          </Button>
-        </form>
-      </Paper>
-    </Container>
+    <div className="auth-container">
+      <form className="auth-form" onSubmit={submitHandler}>
+        <h2 className="auth-login">Registro</h2>
+        <input className="auth-input"
+          type="text"
+          name="email"
+          value={data.email}
+          placeholder="E-mail"
+          onChange={changeHandler}
+          required
+        />
+        <input className="auth-input"
+          type="password"
+          name="password"
+          value={data.password}
+          placeholder="Senha"
+          onChange={changeHandler}
+          required
+        />
+        <input className="auth-input"
+          type="text"
+          name="nome"
+          value={data.nome}
+          placeholder="Nome"
+          onChange={changeHandler}
+          
+        />
+        <button type="submit" className='auth-button'>Registrar</button>
+        <p className="p-auth">
+          Já tem uma conta? <Link to="/login">Entrar</Link>
+        </p>
+      </form>
+    </div>
   );
 };
 
-export default Register;
+export default Login;
