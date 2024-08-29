@@ -17,6 +17,9 @@ const Categories = () => {
     {
       cateName: "irrigação",
     },
+    {
+      cateName: "subprodutos",
+    },
   ]
 
   return (
