@@ -201,6 +201,44 @@ const Data = {
       desc: "Permitem uma melhor proteção filtrante para cada sistema de irrigação. A estrutura simples e segura, fruto de uma cuidadosa tecnologia construtiva, reduz ao mínimo a necessidade de intervenções de manutenção.",
     },
 
+
+    {
+      id: 21,
+      discount: 0,
+      cover: "./images/agricultura/Polpa Citrica.JPG",
+      name: "Polpa citrica",
+      price: 90,
+      cat: "subprodutos",
+      desc: "Polpa Citrica a Granel obtido através de resíduos, em particular do bagaço que sobra da prensagem de laranja",
+    },
+    {
+      id: 22,
+      discount: 10,
+      cover: "./images/agricultura/Farelo de Soja.JPG",
+      name: "Farelo de Soja 50kg",
+      price: 140,
+      cat: "subprodutos",
+      desc: "O farelo de soja é importante na formulação de rações nutritivas. Deriva do processamento de grãos de soja, após a extração do óleo, resultando em um produto rico em proteínas e nutrientes",
+    },
+    {
+      id: 23,
+      discount: 0,
+      cover: "./images/agricultura/Casca de Soja.png",
+      name: "Casca de Soja 20kg",
+      price: 36,
+      cat: "subprodutos",
+      desc: "Excelente fonte de fibra de alta digestibilidade e proteínas",
+    },
+    {
+      id: 24,
+      discount: 10,
+      cover: "./images/agricultura/DDG milho.png",
+      name: "DDG Milho 5kg",
+      price: 65,
+      cat: "subprodutos",
+      desc: "O DDG é o grão seco de destilaria,  subproduto do processamento do milho para obtenção do etanol com proteína e alto nível de fibra digestível",
+    },
+
   
   ],
 }
