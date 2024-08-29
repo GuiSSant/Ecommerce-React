@@ -54,12 +54,11 @@ const ShopCart = ({ shopItems, addToCart, Cat }) => {
     setCount(count + 1)
   }
 
-
   return (
     <>
-  {shopItems.filter(produ => produ.cat.toLowerCase() == Cat.toLowerCase() || produ.name.toLowerCase().includes(Cat.toLowerCase())).map(shopItems => (
-
-        
+  
+       {shopItems.map((shopItems, index) => {
+      {if (shopItems.cat == Cat)  return (
         
           <div className='box'>
             <div className='product mtop compra'>
@@ -95,8 +94,8 @@ const ShopCart = ({ shopItems, addToCart, Cat }) => {
               </div>
             </div>
           </div>
-        
-      ))}
+        )}
+      })}
     </>
   )
 }
