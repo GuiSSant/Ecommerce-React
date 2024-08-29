@@ -6,6 +6,7 @@ import Sementes from "../components/Sementes/Sementes"
 import Wrapper from "../components/wrapper/Wrapper"
 import Fertilizantes from "../components/Fertilizantes/Fertilizantes"
 import Irrigação from "../components/Irrigação/Irrigação"
+import Subprodutos from "../components/Subprodutos/Subprodutos"
 
 const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
   return (
@@ -17,6 +18,7 @@ const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
       <Sementes productItems={productItems} addToCart={addToCart}/>
       <Fertilizantes productItems={productItems} addToCart={addToCart}/>
       <Irrigação productItems={productItems} addToCart={addToCart}/>
+      <Subprodutos productItems={productItems} addToCart={addToCart}/>
 
       
       <Wrapper />
