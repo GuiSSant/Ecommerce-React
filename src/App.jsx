@@ -11,9 +11,11 @@ import Footer from "./common/footer/Footer"
 import Login from "./auth/Login"
 import Profile from "./auth/Profile"
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
-import Register from "./auth/Registro"
+import Register from "./auth/Register"
 import Produto from "./components/Produto/Produto"
 import Pedido from "./components/Pedido/Pedido"
+import Pesquisa from "./components/Pesquisa/Pesquisa"
+
 
 function App() {
   /*
@@ -103,7 +105,7 @@ function App() {
             
       
           <Route path="/cat/:cat" element={<CategoriaCarregada productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
-
+          <Route path="/psq/:psq" element={<Pesquisa productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
           <Route path="/prod/:prod" element={<Produto productItems={productItems} addToCart={addToCart} shopItems={productItems}/>}/>
 
 
