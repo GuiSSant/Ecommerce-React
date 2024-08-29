@@ -1,6 +1,6 @@
 import React, {useState } from "react";
 import logo from "../../components/assets/images/logo.png"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import List from "./List";
 
 const Search = ({ CartItem }) => {
@@ -17,6 +17,12 @@ const Search = ({ CartItem }) => {
     var lowerCase =e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
+  
+    const navigate = useNavigate();
+    let handleEnter = (e) => {
+    if(e.key === "Enter"){
+      navigate(`/psq/${e.target.value}`)    }
+  }
 
   const Esconder = () => {
   
@@ -47,7 +53,7 @@ const Search = ({ CartItem }) => {
 
           {/*<span>Categorias</span>*/}
 
-            <input type='text' placeholder='Pesquise e aperte Enter...' onChange={inputHandler} onClick={Show} />
+            <input type='text' placeholder='Pesquise e aperte Enter...' onChange={inputHandler} onClick={Show} onKeyDown={handleEnter}/>
             <i className='fa fa-search'></i>
            
 
