@@ -11,7 +11,7 @@ import Footer from "./common/footer/Footer"
 import Login from "./auth/Login"
 import Profile from "./auth/Profile"
 import CategoriaCarregada from "./PaginaCategoria/CategoriaCarregada"
-import Register from "./auth/Register"
+import Register from "./auth/Registro"
 import Produto from "./components/Produto/Produto"
 import Pedido from "./components/Pedido/Pedido"
 
